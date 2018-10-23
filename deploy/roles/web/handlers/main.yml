@@ -7,6 +7,3 @@
 
 - name: restart gunicorn
   service: name={{ env_name }}_gunicorn.service state=restarted enabled=yes
-
-- name: restart grpc
-  service: name={{ env_name }}_grpc.service state=restarted enabled=yes

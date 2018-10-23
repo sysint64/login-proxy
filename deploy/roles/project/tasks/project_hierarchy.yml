@@ -29,4 +29,3 @@
   notify:
     - restart gunicorn
     - restart gunicorn socket
-    - restart grpc
