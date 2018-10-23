@@ -1,0 +1,35 @@
+env_name: "gcloud"
+project_namespace: "login_proxy"
+
+nginx_host: "localhost"
+nginx_port: "12340"
+nginx_server_name: "35.237.116.16"
+nginx_listen_port: 80
+nginx_server_full_name: "{{ nginx_server_name }}"
+nginx_scheme: "http"
+gunicorn_workers: 1
+
+# Django
+DJANGO_SETTINGS_MODULE: "{{ project_namespace }}.{{ env_name }}_settings"
+
+# Тестовый сервер, поэтому без vault
+django_secret_key: 01wtd9i^gxtkkjl2@3a@)i4d#8#4fe71i7e(px^kp5(yos_yx1
+
+django_allowed_host: "localhost"
+django_debug: True
+
+db_name: "login_proxy"
+db_user: "andrey"
+
+db_user_passwd: 123321
+
+project_linux_user: "www-data"
+project_linux_group: "www-data"
+
+project_dir: "/var/www/login_proxy"
+project_virtualenv_dir: "{{ project_dir }}/venv"
+project_static_media_dir: "{{ project_dir }}/static_media"
+project_work_tree: "{{ project_dir }}/work_tree"
+
+git_repo: "https://github.com/sysint64/login-proxy.git"
+git_version: "master"
